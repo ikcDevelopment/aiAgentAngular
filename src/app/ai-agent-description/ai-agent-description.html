@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>Agentes de IA — ¿Qué son y cómo funcionan?</h3>
+    <p>
+      Un agente de IA es un sistema que puede percibir su entorno, tomar decisiones y ejecutar acciones para lograr
+      un objetivo. A diferencia de un simple chatbot, un agente puede usar herramientas, consultar datos externos y
+      mantener contexto a lo largo de una conversación.
+    </p>
+
+    <strong>Conceptos que debes entender:</strong>
+    <ul>
+      <li>
+        LLM como cerebro: El modelo de lenguaje (GPT, Gemini, Claude, etc.) es el motor de razonamiento del agente, no
+        el agente completo.
+      </li>
+      <li>
+        Tools / Herramientas: Funciones que el agente puede llamar para obtener información o ejecutar acciones
+        (consultar una base de datos, llamar una API, etc.).
+      </li>
+      <li>
+        System Prompt: Las instrucciones base que definen el comportamiento, personalidad y límites del agente.
+      </li>
+      <li>
+        Context Window: La memoria de corto plazo del LLM. Todo lo que el agente "recuerda" en una conversación vive
+        aquí.
+      </li>
+    </ul>
+    <hr>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>Orquestación Multi-Agente</h3>
+    <p>Un sistema multi-agente es una arquitectura donde múltiples agentes especializados trabajan juntos, coordinados
+      por un agente orquestador que decide quién atiende cada solicitud.</p>
+    <p>Piénsalo así: el orquestador es el gerente, y los agentes especializados son los empleados con habilidades
+      específicas. El gerente recibe la solicitud del cliente y la delega al empleado correcto.</p>
+    <strong>Patrones que debes conocer:</strong>
+
+    <ul>
+      <li>
+        Router / Orquestador: Analiza la intención del usuario y rutea al agente correcto.
+      </li>
+      <li>
+        Agente Especialista: Resuelve un tipo específico de solicitud con sus propias herramientas y contexto.
+      </li>
+      <li>
+        Agente de Validación: Verifica que se tienen todos los datos necesarios antes de procesar una solicitud.
+      </li>
+      <li>
+        Agente Genérico / Fallback: Maneja solicitudes que no corresponden a ningún especialista.
+      </li>
+    </ul>
+    <hr>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>RAG — Retrieval Augmented Generation</h3>
+    <p>RAG es una técnica que permite a un LLM responder preguntas usando información externa sin necesidad de reentrenar el modelo. En lugar de depender solo de lo que aprendió durante el entrenamiento, el agente busca información relevante en una fuente de datos y la incluye en su contexto antes de responder.</p>
+    <strong>Flujo básico de RAG:</strong>
+
+    <ul>
+      <li>
+        Usuario hace una pregunta
+      </li>
+      <li>
+        El sistema busca información relevante en la fuente de datos (JSON, documentos, vector DB)
+      </li>
+      <li>
+        Esa información se incluye en el prompt junto con la pregunta
+      </li>
+      <li>
+        El LLM responde basándose en esa información — no alucina porque tiene los datos reales
+      </li>
+    </ul>
+    <hr>
+  </div>
+
+  <div class="col-2"></div>
+</div>

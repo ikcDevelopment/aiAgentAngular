@@ -1,0 +1,24 @@
+Handling events for a swimlane graph involves using interactive graph libraries (like ngx-graph, JointJS, or Cytoscape)
+to detect user actions—such as clicks, double-clicks, hovers, or drag-and-drop—on nodes, edges, or the lanes themselves.
+Implement these by binding event listeners to the graph elements and capturing (click) or (dblclick) events within SVG
+nodes or container divs to trigger actions.
+
+## Key Techniques for Handling Swimlane Events:
+
+- Node/Task Interaction (Click/Double-Click): Bind click event handlers to task nodes to display detailed information or
+  launch a dialogue. In ngx-graph, this is done via <svg:g class="node" (click)="onNodeClick($event)">.
+- Drag-and-Drop (Updating Ownership): Implement drag-and-drop to move tasks between lanes. The event handler should
+  identify the new lane and update the underlying data model to change the responsible party.
+- Hover Events (Tooltips): Use hover (or mouseover) events on nodes or connection lines to display tooltips or highlight
+  connected steps.
+- Contextual Menus: Add right-click (contextmenu) events on nodes to allow users to delete, edit, or split tasks.
+- Lane Selection/Highlighting: Allow users to click on a lane header to highlight all tasks within that specific
+  department or role.
+
+## Common Events to Handle:
+
+- onNodeClick: Select a task.
+- onNodeDoubleCLick: Open task details.
+- onEdgeClick: Select a connector/flow.
+- onLayoutChange: Triggered when the diagram structure updates.
+

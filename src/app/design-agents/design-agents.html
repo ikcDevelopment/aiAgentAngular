@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>Diseño de System Prompts — Cómo Evitar Alucinaciones</h3>
+    <p>Un system prompt mal diseñado es la causa número uno de alucinaciones y comportamientos inesperados en un agente.
+      Aquí están las mejores prácticas:
+    </p>
+    <ul>
+      <li>
+        Sé específico y acotado: Define claramente qué puede y qué NO puede hacer el agente. Eres un asistente de ventas
+        de AutoMóvil. Solo respondes preguntas relacionadas con nuestro inventario. Si el usuario pregunta algo fuera de
+        ese scope, redirígelo amablemente.
+      </li>
+      <li>
+        Grounding con datos: Incluye la información relevante directamente en el prompt. Aquí está el inventario
+        disponible: [JSON]. Basa tus respuestas ÚNICAMENTE en este inventario.
+      </li>
+      <li>
+        Instrucciones de formato: Dile exactamente cómo quieres que responda. Responde siempre en español. Sé conciso.
+        Si no sabes algo, dilo — nunca inventes información.
+      </li>
+      <li>
+        Manejo de incertidumbre: Si no tienes suficiente información para responder con certeza, pregunta al usuario los
+        datos que necesitas antes de responder.
+      </li>
+    </ul>
+    <hr>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3>Editores Visuales de Flujos</h3>
+    <p>El reto incluye construir un editor visual donde el usuario pueda armar flujos de agentes conectando nodos arrastrables — similar a N8N, LangFlow o Flowise</p>
+    <p>La buena noticia: existen librerías que hacen el trabajo pesado por ti. Lo que debes entender es cómo funcionan conceptualmente:</p>
+
+    <ul>
+      <li>
+        Nodos: Cada elemento del flujo (un agente, una herramienta, un input) es un nodo con configuración propia
+      </li>
+      <li>
+        Edges / Conexiones: Las líneas que conectan los nodos y definen el flujo de datos.
+      </li>
+      <li>
+        Estado del flujo: Cómo se almacena y transmite la información entre nodos.
+      </li>
+    </ul>
+    <hr>
+  </div>
+  <div class="col-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+    <h3> UX Conversacional</h3>
+    <p>Diseñar un agente que se siente natural no es solo un problema técnico — es un problema de UX. Algunos principios básicos:</p>
+
+    <ul>
+      <li>
+        Recopilación progresiva de datos: No le pidas toda la información al usuario de una vez. Haz preguntas una a la vez, en orden lógico.
+      </li>
+      <li>
+        Confirmación antes de actuar: Antes de confirmar una cita o procesar una solicitud, muestra un resumen y pide confirmación
+      </li>
+      <li>
+        Manejo de errores amigable: Si el usuario da información inválida, no respondas con un error técnico. Guíalo amablemente
+      </li>
+      <li>
+        Memoria de contexto: Si el usuario ya dio su nombre, no se lo vuelvas a pedir. El agente debe recordar el contexto de la conversación.
+      </li>
+    </ul>
+    <hr>
+  </div>
+
+</div>
