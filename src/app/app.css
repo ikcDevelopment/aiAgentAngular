@@ -1,0 +1,12 @@
+a {
+  margin-right: 12px;
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+}
+
+a:hover{
+  color: navy;
+  font-weight: bolder;
+  text-decoration: underline;
+}
