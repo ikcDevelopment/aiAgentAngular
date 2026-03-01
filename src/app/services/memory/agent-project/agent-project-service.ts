@@ -33,6 +33,7 @@ export class AgentProjectService {
 
   updateProject(project:AgentProjectModel){
       this.db.set(project.chatId, project);
+      this.msg='Proyecto actulizado en base de datos';
   }
 
   getProject(projectId:string): AgentProjectModel | undefined{

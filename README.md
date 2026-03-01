@@ -1,3 +1,13 @@
+Miembros: 
+Carlos Gonzalez:  Carlos se encargó de todos los agentes. En su repo encontrarán la información técnica de su desarrollo. 
+
+Estuardo Wyss: Estuardo se encargó del frontend en Angular.  https://github.com/ikcDevelopment/aiAgentAngular.git
+Se creó una aplicacion con angular 21.1.5 usando la libreria gráfica Swimlane para definir cada nodo visual.
+El nodo proyecto se conecta con el agente que está creando.  El nodo del agente se conecta con 3 nodos: 1. modelo, 2. memoria y 3 herramientas
+la información de los nodos. Por razon de tiempo y previendo escalabilidad para futuras versiones, atraves de un servicio se definido una db
+usando un Map<> object para almacenar la información por proyecto.
+
+
 # Aiagent
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.5.
