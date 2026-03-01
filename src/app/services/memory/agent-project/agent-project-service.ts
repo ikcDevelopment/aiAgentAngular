@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {AgentProjectModel} from './agent-project-model';
+import {AiAgentModel} from './ai-agent-model';
+import {LlmModel} from './llm-model';
+import {MemoryModel} from './memory-model';
 
 @Injectable({
   providedIn: 'root',
@@ -54,5 +57,54 @@ export class AgentProjectService {
       }
 
       return false;
+  }
+
+  addUpdateAiAgent(projectId:string, agent:AiAgentModel):boolean{
+      const project = this.getProject(projectId);
+
+      if(project !== undefined){
+          this.error=false;
+          this.msg='Agente persistido exitosamente';
+          project.aiAgent = agent;
+          this.updateProject(project);
+          return this.error;
+      }else{
+          this.error=true;
+          this.msg='Proyecto no existe en db';
+          return this.error;
+      }
+  }
+
+  addUpdateModel(projectId:string, llmModel:LlmModel):boolean{
+      const project = this.getProject(projectId);
+
+      if(project !== undefined){
+          this.error=false;
+          this.msg='Modelo persistido exitosamente';
+          project.llmModel = llmModel;
+          this.updateProject(project);
+          return this.error;
+      }else{
+          this.error=true;
+          this.msg='Proyecto no existe en db';
+          return this.error;
+      }
+
+  }
+
+  addUpdateMemory(projectId:string, memory:MemoryModel):boolean{
+      const project = this.getProject(projectId);
+
+      if(project !== undefined){
+          this.error=false;
+          this.msg='Modelo persistido exitosamente';
+          project.memory = memory;
+          this.updateProject(project);
+          return this.error;
+      }else{
+          this.error=true;
+          this.msg='Proyecto no existe en db';
+          return this.error;
+      }
   }
 }

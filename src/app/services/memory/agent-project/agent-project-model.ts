@@ -1,3 +1,7 @@
+import {AiAgentModel} from './ai-agent-model';
+import {LlmModel} from './llm-model';
+import {MemoryModel} from './memory-model';
+
 export interface AgentProjectModel {
     chatId:string;
     chatName:string;
@@ -16,4 +20,7 @@ export interface AgentProjectModel {
     onErrorWhatDo:string;
     note:string;
     displayNoteOnChat:string;
+    aiAgent?:AiAgentModel;
+    llmModel?:LlmModel;
+    memory?:MemoryModel;
 }
