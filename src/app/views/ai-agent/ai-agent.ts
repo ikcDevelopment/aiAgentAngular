@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AgentProjectService} from '../../services/memory/agent-project/agent-project-service';
 
 @Component({
   selector: 'app-ai-agent',
@@ -27,9 +28,13 @@ export class AiAgent {
         'enable_streaming': new FormControl('', Validators.required)
     });
 
-    constructor() {
+    constructor( private projectInMemorDb:AgentProjectService) {
     }
 
     submit(){}
+
+    uploadAgent(){}
+
+    private createAgentModel(){}
 
 }

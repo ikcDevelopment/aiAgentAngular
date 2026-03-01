@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AgentProjectService} from '../../services/memory/agent-project/agent-project-service';
 
 @Component({
   selector: 'app-agent-model',
@@ -19,10 +20,14 @@ export class AgentModel {
         'temperature': new FormControl(1, Validators.required)
     });
 
-    constructor() {
+    constructor( private projectInMemorDb:AgentProjectService) {
     }
 
     submit(){
 
     }
+
+    uploadLlmModel(){}
+
+    private createLlmModel(){}
 }

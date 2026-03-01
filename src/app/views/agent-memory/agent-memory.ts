@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {AgentProjectService} from '../../services/memory/agent-project/agent-project-service';
 
 @Component({
   selector: 'app-agent-memory',
@@ -18,11 +19,17 @@ export class AgentMemory {
         'memoryType': new FormControl('', Validators.required)
     });
 
-    constructor() {
+    constructor(
+        private projectInMemorDb:AgentProjectService
+    ) {
     }
 
     submit(){
 
     }
+
+    uploadMemory(){}
+
+    private createMemoryModel(){}
 
 }

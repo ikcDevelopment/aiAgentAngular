@@ -6,6 +6,7 @@ import {AgentProject} from '../views/agent-project/agent-project';
 import {AiAgent} from '../views/ai-agent/ai-agent';
 import {AgentTools} from '../views/agent-tools/agent-tools';
 import {NgOptimizedImage} from '@angular/common';
+import {AgentProjectService} from '../services/memory/agent-project/agent-project-service';
 
 
 @Component({
@@ -28,6 +29,7 @@ export class AgentProjectDesign {
 
 
     constructor(
+        private projectInMemorDb:AgentProjectService
     ) {
         this.fillLinks();
         this.fillNodes();
@@ -216,4 +218,9 @@ export class AgentProjectDesign {
             this.isOpenModalAgenteHerramientas = signal(false);
         }
     }
+
+    uploadProject(){}
+
+    private createProjectModel(){}
+
 }
