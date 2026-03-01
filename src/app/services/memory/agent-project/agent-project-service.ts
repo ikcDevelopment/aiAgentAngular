@@ -3,6 +3,7 @@ import {AgentProjectModel} from './agent-project-model';
 import {AiAgentModel} from './ai-agent-model';
 import {LlmModel} from './llm-model';
 import {MemoryModel} from './memory-model';
+import {ToolsModel} from './tools-model';
 
 @Injectable({
   providedIn: 'root',
@@ -99,6 +100,22 @@ export class AgentProjectService {
           this.error=false;
           this.msg='Modelo persistido exitosamente';
           project.memory = memory;
+          this.updateProject(project);
+          return this.error;
+      }else{
+          this.error=true;
+          this.msg='Proyecto no existe en db';
+          return this.error;
+      }
+  }
+
+  addUpdateTools(projectId:string, tools: ToolsModel){
+      const project = this.getProject(projectId);
+
+      if(project !== undefined){
+          this.error=false;
+          this.msg='Modelo persistido exitosamente';
+          project.tools = tools;
           this.updateProject(project);
           return this.error;
       }else{

@@ -1,6 +1,7 @@
 import {AiAgentModel} from './ai-agent-model';
 import {LlmModel} from './llm-model';
 import {MemoryModel} from './memory-model';
+import {ToolsModel} from './tools-model';
 
 export interface AgentProjectModel {
     chatId:string;
@@ -23,4 +24,5 @@ export interface AgentProjectModel {
     aiAgent?:AiAgentModel;
     llmModel?:LlmModel;
     memory?:MemoryModel;
+    tools?:ToolsModel
 }
