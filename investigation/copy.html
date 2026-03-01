@@ -1,58 +1,94 @@
-<div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <div class="row">
-            <div class="col-12">
-                <form [formGroup]="form" (ngSubmit)="submit()">
-
-                    <div class="form-group form-floating row">
-                        <div class="col-12">
-                            <label class="form-label">Instruction</label>
-                            <textarea
-                                class="form-control"
-                                rows="3"
-                                formControlName="userInput"
-                                placeholder="Register fertilizer expense for AU-14 last Friday for 1250 quetzales">
-                        </textarea>
-                        </div>
-                    </div>
-
-                    <div class="form-group form-floating row">
-                        <div class="col-12">
-                            <label class="form-label">Agricultural Unit (Optional)</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                formControlName="agriculturalUnit">
-                        </div>
-                    </div>
-
-                    <div class="form-group form-floating row">
-                        <div class="col-12">
-                            <label class="form-label">Preferred Currency</label>
-                            <select class="form-select" formControlName="preferredCurrency">
-                                <option value="GTQ">GTQ</option>
-                                <option value="USD">USD</option>
-                                <option value="EUR">EUR</option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <button class="btn btn-primary" [disabled]="loading">
-                        {{ loading ? 'Processing...' : 'Send to AI' }}
-                    </button>
-
-                </form>
-
-                <hr>
-
-                <!--<div [@if]="response">
-                    {{ response | json }}
-                </div>-->
-            </div>
-        </div>
-    </div>
-    <div class="col-2"></div>
-</div>
-
+PointerEvent {isTrusted: true, pointerId: 1, width: 1, height: 1, pressure: 0, …}
+isTrusted
+:
+true
+altitudeAngle
+:
+1.5707963267948966
+bubbles
+:
+true
+cancelable
+:
+true
+clientX
+:
+825
+clientY
+:
+405
+composed
+:
+true
+detail
+:
+1
+height
+:
+1
+layerX
+:
+825
+layerY
+:
+405
+offsetX
+:
+826
+offsetY
+:
+164
+pageX
+:
+825
+pageY
+:
+405
+pointerId
+:
+1
+pointerType
+:
+"mouse"
+returnValue
+:
+true
+screenX
+:
+825
+screenY
+:
+551
+sourceCapabilities
+:
+InputDeviceCapabilities {firesTouchEvents: false}
+srcElement
+:
+rect
+target
+:
+rect
+timeStamp
+:
+1983676.5999999996
+type
+:
+"click"
+view
+:
+Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+which
+:
+1
+width
+:
+1
+x
+:
+825
+y
+:
+405
+[[Prototype]]
+:
+PointerEvent

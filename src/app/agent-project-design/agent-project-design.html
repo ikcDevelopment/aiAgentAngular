@@ -1,0 +1,132 @@
+<div class="row">
+    <div class="col-8">
+        <ngx-graph
+            layout="dagreCluster"
+            class="chart-container"
+            [view]="[1300, 1300]"
+            [links]=nodesLinks
+            [nodes]=projectNodes
+
+            (click)="graphClicked($event)"
+        >
+            <ng-template #defsTemplate>
+                <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
+                    <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+                </svg:marker>
+            </ng-template>
+
+            <ng-template #nodeTemplate let-node>
+                <svg:g class="node">
+                    <svg:rect
+                        [attr.type]="node.id"
+                        [attr.width]="node.dimension.width"
+                        [attr.height]="node.dimension.height"
+                        [attr.fill]="node.data.color"
+                    />
+                    <svg:text
+                        alignment-baseline="central"
+                        [attr.x]="10"
+                        [attr.y]="node.dimension.height / 2"
+                    >
+                        {{node.label}}
+                    </svg:text>
+                </svg:g>
+            </ng-template>
+
+            <ng-template #linkTemplate let-link>
+                <svg:g class="edge">
+                    <svg:path class="line" stroke-width="2" marker-end="url(#arrow)"></svg:path>
+                    <svg:text class="edge-label" text-anchor="middle">
+                        <textPath
+                            class="text-path"
+                            [attr.href]="'#' + link.id"
+                            [style.dominant-baseline]="link.dominantBaseline"
+                            startOffset="50%"
+                        >
+                            {{link.label}}
+                        </textPath>
+                    </svg:text>
+                </svg:g>
+            </ng-template>
+
+        </ngx-graph>
+    </div>
+    <div class="col-4">
+       @if (isOpenModalProyectoAgente()) {
+
+
+
+                <header>
+                    <h3>{{ title() }}</h3>
+                    <button (click)="close()">✕</button>
+                </header>
+
+                <section>
+                    <app-agent-project></app-agent-project>
+                </section>
+
+       }
+    </div>
+</div>
+
+
+
+@if (isOpenModalAgenteIa()) {
+    <div class="backdrop" (click)="close()"></div>
+
+
+        <header>
+            <h3>{{ title() }}</h3>
+            <button (click)="close()">✕</button>
+        </header>
+
+        <section>
+            <app-ai-agent></app-ai-agent>
+        </section>
+
+}
+
+@if (isOpenModalAgenteModelo()) {
+    <div class="backdrop" (click)="close()"></div>
+
+    <div class="modal">
+        <header>
+            <h3>{{ title() }}</h3>
+            <button (click)="close()">✕</button>
+        </header>
+
+        <section>
+            <app-agent-model></app-agent-model>
+        </section>
+    </div>
+}
+
+@if (isOpenModalAgenteMemoria()) {
+    <div class="backdrop" (click)="close()"></div>
+
+    <div class="modal">
+        <header>
+            <h3>{{ title() }}</h3>
+            <button (click)="close()">✕</button>
+        </header>
+
+        <section>
+            <app-agent-memory></app-agent-memory>
+        </section>
+    </div>
+}
+
+@if (isOpenModalAgenteHerramientas()) {
+    <div class="backdrop" (click)="close()"></div>
+
+    <div class="modal">
+        <header>
+            <h3>{{ title() }}</h3>
+            <button (click)="close()">✕</button>
+        </header>
+
+        <section>
+            <app-agent-tools></app-agent-tools>
+        </section>
+    </div>
+}

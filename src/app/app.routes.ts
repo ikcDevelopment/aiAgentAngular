@@ -5,6 +5,7 @@ import {DesignAgents} from './design-agents/design-agents';
 import {LibrariesAgents} from './libraries-agents/libraries-agents';
 import {ExampleAgents} from './example-agents/example-agents';
 import {AgentAiComponent} from './agent-ai-component/agent-ai-component';
+import {AgentProjectDesign} from './agent-project-design/agent-project-design';
 
 export const routes: Routes = [
 
@@ -31,6 +32,10 @@ export const routes: Routes = [
     {
         path: 'prompt',
         component: AgentAiComponent
+    },
+    {
+        path:'ai-agent',
+        component: AgentProjectDesign
     },
   {
     path: '**',
