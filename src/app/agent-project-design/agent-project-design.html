@@ -10,8 +10,9 @@
             (click)="graphClicked($event)"
         >
             <ng-template #defsTemplate>
-                <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
-                    <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+                <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4"
+                            orient="auto">
+                    <svg:path d="M0,-5L10,0L0,5" class="arrow-head"/>
                 </svg:marker>
             </ng-template>
 
@@ -28,7 +29,7 @@
                         [attr.x]="10"
                         [attr.y]="node.dimension.height / 2"
                     >
-                        {{node.label}}
+                        {{ node.label }}
                     </svg:text>
                 </svg:g>
             </ng-template>
@@ -43,7 +44,7 @@
                             [style.dominant-baseline]="link.dominantBaseline"
                             startOffset="50%"
                         >
-                            {{link.label}}
+                            {{ link.label }}
                         </textPath>
                     </svg:text>
                 </svg:g>
@@ -52,54 +53,66 @@
         </ngx-graph>
     </div>
     <div class="col-4">
-       @if (isOpenModalProyectoAgente()) {
-
-
-
-                <header>
+        @if (isOpenModalProyectoAgente()) {
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-10">
                     <h3>{{ title() }}</h3>
-                    <button (click)="close()">✕</button>
-                </header>
-
-                <section>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" (click)="close()">Cerrar</button>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-12">
                     <app-agent-project></app-agent-project>
-                </section>
+                </div>
+            </div>
+        }
 
-       }
+        @if (isOpenModalAgenteIa()) {
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-10">
+                    <h3>{{ title() }}</h3>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" (click)="close()">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-12">
+                    <app-ai-agent></app-ai-agent>
+                </div>
+            </div>
+
+        }
+
+        @if (isOpenModalAgenteModelo()) {
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-10">
+                    <h3>{{ title() }}</h3>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" (click)="close()">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-12">
+                    <app-agent-model></app-agent-model>
+                </div>
+            </div>
+
+        }
+
     </div>
 </div>
 
 
 
-@if (isOpenModalAgenteIa()) {
-    <div class="backdrop" (click)="close()"></div>
 
 
-        <header>
-            <h3>{{ title() }}</h3>
-            <button (click)="close()">✕</button>
-        </header>
 
-        <section>
-            <app-ai-agent></app-ai-agent>
-        </section>
-
-}
-
-@if (isOpenModalAgenteModelo()) {
-    <div class="backdrop" (click)="close()"></div>
-
-    <div class="modal">
-        <header>
-            <h3>{{ title() }}</h3>
-            <button (click)="close()">✕</button>
-        </header>
-
-        <section>
-            <app-agent-model></app-agent-model>
-        </section>
-    </div>
-}
 
 @if (isOpenModalAgenteMemoria()) {
     <div class="backdrop" (click)="close()"></div>

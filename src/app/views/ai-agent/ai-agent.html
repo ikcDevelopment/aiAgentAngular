@@ -1,1 +1,137 @@
-<p>ai-agent works!</p>
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <div class="col-12">
+                        <label class="form-label">Id del agente</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="chatId">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <div class="col-12">
+                        <label class="form-label">Chat input</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="chatInput">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Role</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="role"
+                        placeholder="<role/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Goal</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="goal"
+                        placeholder="<goal/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Context</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="context"
+                        placeholder="<context/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Formato de salida</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="output_format"
+                        placeholder="<output_format/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Iteracciones máximas</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="max_iterations"
+                        placeholder="<max_iterations/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Return intermediate</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="return_intermediate"
+                        placeholder="<return_intermediate/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Pasar por imágenes binarias</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="automatically_passthrough_binary_images"
+                        placeholder="<automatically_passthrough_binary_images/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Proceso por lotes</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="batch_processing"
+                        placeholder="<batch_processing/>">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Habilitar hilos</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="enable_streaming"
+                        placeholder="<enable_streaming/>">
+                        </textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

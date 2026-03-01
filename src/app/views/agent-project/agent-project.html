@@ -1,1 +1,183 @@
-<p>agent-project works!</p>
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <div class="col-12">
+                        <label class="form-label">Id del agente</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="chatId">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <div class="col-12">
+                        <label class="form-label">Nombre del agente</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="chatName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Descripción del agente</label>
+                    <textarea
+                        class="form-control"
+                        rows="3"
+                        formControlName="chatDescription"
+                        placeholder="Ingrese descripción del agente">
+                        </textarea>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Url del agente</label>
+                    <input
+                        type="url"
+                        class="form-control"
+                        formControlName="chatUrl">
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Es el agente público</label>
+                    <select class="form-select" formControlName="idChatPublic">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Modo del agente</label>
+                    <select class="form-select" formControlName="chatMode">
+                        <option value="hosted">Hosted</option>
+                        <option value="embeded">Embeded</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Autenticación del agente</label>
+                    <select class="form-select" formControlName="chatAuth">
+                        <option value="basic">Basic</option>
+                        <option value="atom">Atom user</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">hacer al agente disponible en repositorio de atom</label>
+                    <select class="form-select" formControlName="makeAgentAvailableInAtom">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Mensaje inicial del agente</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="chatInitMsg">
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Modo de respuesta del agente</label>
+                    <select class="form-select" formControlName="chatResponseMode">
+                        <option value="ends">Cuando el nodo finaliza</option>
+                        <option value="event">Webhook node</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Requiere presionar botón para iniciar conversación</label>
+                    <select class="form-select" formControlName="clickToStart">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Siempre mostrar data</label>
+                    <select class="form-select" formControlName="alwaysOutputData">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Ejecutar una sola vez</label>
+                    <select class="form-select" formControlName="executeOnce">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Ejecutar nuevamente en error</label>
+                    <select class="form-select" formControlName="retryOnFail">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Al suceder error</label>
+                    <select class="form-select" formControlName="onErrorWhatDo">
+                        <option value="stop_workflow">Suspender ejecución</option>
+                        <option value="continue">Continuar</option>
+                        <option value="continue_show_error">Continuar en información del error</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Nota del agente</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        formControlName="note">
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Desplegar nota en el chat</label>
+                    <select class="form-select" formControlName="displayNoteOnChat">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

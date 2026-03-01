@@ -1,1 +1,29 @@
-<p>agent-model works!</p>
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <div class="col-12">
+                        <label class="form-label">Modelo</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="modelo">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <div class="col-12">
+                        <label class="form-label">Temperatua</label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            formControlName="temperature">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

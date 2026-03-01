@@ -14,7 +14,7 @@ import {AgentTools} from '../views/agent-tools/agent-tools';
   styleUrl: './agent-project-design.css',
 })
 export class AgentProjectDesign {
-    isOpenModalProyectoAgente= signal(true);
+    isOpenModalProyectoAgente= signal(false);
     isOpenModalAgenteIa = signal(false);
     isOpenModalAgenteModelo = signal(false);
     isOpenModalAgenteMemoria = signal(false);
@@ -164,8 +164,34 @@ export class AgentProjectDesign {
 
     graphClicked(event:any){
         console.log(event);
-        this.isOpenModalProyectoAgente.set(true);
-        this.title.set('modal');
+
+        this.close();
+
+        const component = event.srcElement.attributes[1].nodeValue;
+
+        switch (component) {
+            case 'agent_project':
+                this.title.set('Proyecto');
+                this.isOpenModalProyectoAgente=signal(true);
+                break;
+            case 'Agente_ia':
+                this.title.set('Agente');
+                this.isOpenModalAgenteIa.set(true);
+                break;
+            case 'agent_model':
+                this.title.set('Modelo');
+                this.isOpenModalAgenteModelo.set(true);
+                break;
+            case 'agent_memory':
+                this.title.set('Memoria');
+                this.isOpenModalAgenteMemoria.set(true);
+                break;
+            case 'agent_tools':
+                this.title.set('Herramientas');
+                this.isOpenModalAgenteHerramientas.set(true);
+                break;
+        }
+
     }
 
     close(){
