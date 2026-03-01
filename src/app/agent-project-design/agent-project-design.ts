@@ -5,11 +5,12 @@ import {AgentModel} from '../views/agent-model/agent-model';
 import {AgentProject} from '../views/agent-project/agent-project';
 import {AiAgent} from '../views/ai-agent/ai-agent';
 import {AgentTools} from '../views/agent-tools/agent-tools';
+import {NgOptimizedImage} from '@angular/common';
 
 
 @Component({
   selector: 'app-agent-project-design',
-    imports: [NgxGraphModule, AgentMemory, AgentModel, AgentProject, AiAgent, AgentTools, ],
+    imports: [NgxGraphModule, AgentMemory, AgentModel, AgentProject, AiAgent, AgentTools, NgOptimizedImage,],
   templateUrl: './agent-project-design.html',
   styleUrl: './agent-project-design.css',
 })

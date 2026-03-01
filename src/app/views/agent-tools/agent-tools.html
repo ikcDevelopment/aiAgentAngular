@@ -1,1 +1,32 @@
-<p>agent-tools works!</p>
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group form-floating row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  formControlName="consultas_generales" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Consultas generales
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  formControlName="catalogo_vehiculos" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Catálogo de vehículos
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group form-floating row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"  formControlName="agenda" checked>
+                    <label class="form-check-label" for="flexCheckChecked">
+                        Agenda
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -15,8 +15,8 @@ export class AgentModel {
 
     form = new FormGroup({
         'chatId': new FormControl('', [Validators.required, Validators.minLength(5)]),
-        'modelo': new FormControl('', Validators.required),
-        'temperature': new FormControl(0, Validators.required)
+        'modelo': new FormControl('gemini-2.5-flash', Validators.required),
+        'temperature': new FormControl(1, Validators.required)
     });
 
     constructor() {

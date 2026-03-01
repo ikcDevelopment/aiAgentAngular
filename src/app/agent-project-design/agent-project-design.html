@@ -24,11 +24,13 @@
                         [attr.height]="node.dimension.height"
                         [attr.fill]="node.data.color"
                     />
+
                     <svg:text
                         alignment-baseline="central"
                         [attr.x]="10"
                         [attr.y]="node.dimension.height / 2"
                     >
+
                         {{ node.label }}
                     </svg:text>
                 </svg:g>
@@ -105,41 +107,39 @@
 
         }
 
+        @if (isOpenModalAgenteMemoria()) {
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-10">
+                    <h3>{{ title() }}</h3>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" (click)="close()">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-12">
+                    <app-agent-memory></app-agent-memory>
+                </div>
+            </div>
+        }
+
+        @if (isOpenModalAgenteHerramientas()) {
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-10">
+                    <h3>{{ title() }}</h3>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" (click)="close()">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: 5px; margin-right: 5px">
+                <div class="col-12">
+                    <app-agent-tools></app-agent-tools>
+                </div>
+            </div>
+        }
     </div>
 </div>
 
-
-
-
-
-
-
-@if (isOpenModalAgenteMemoria()) {
-    <div class="backdrop" (click)="close()"></div>
-
-    <div class="modal">
-        <header>
-            <h3>{{ title() }}</h3>
-            <button (click)="close()">✕</button>
-        </header>
-
-        <section>
-            <app-agent-memory></app-agent-memory>
-        </section>
-    </div>
-}
-
-@if (isOpenModalAgenteHerramientas()) {
-    <div class="backdrop" (click)="close()"></div>
-
-    <div class="modal">
-        <header>
-            <h3>{{ title() }}</h3>
-            <button (click)="close()">✕</button>
-        </header>
-
-        <section>
-            <app-agent-tools></app-agent-tools>
-        </section>
-    </div>
-}

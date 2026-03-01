@@ -1,1 +1,16 @@
-<p>agent-memory works!</p>
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group form-floating row">
+                <div class="col-12">
+                    <label class="form-label">Es el agente público</label>
+                    <select class="form-select" formControlName="memoryType">
+                        <option value="in_memory_db">Base de datos en memoria</option>
+                        <option value="relationa_db">Base de datos relacional</option>
+                        <option value="math_deb">Base de datos matemáticas</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
