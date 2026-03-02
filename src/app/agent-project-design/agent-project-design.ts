@@ -33,6 +33,7 @@ export class AgentProjectDesign {
     ) {
         this.fillLinks();
         this.fillNodes();
+
     }
 
     private fillNodes(){

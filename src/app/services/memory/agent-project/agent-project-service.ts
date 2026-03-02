@@ -1,14 +1,17 @@
-import { Injectable } from '@angular/core';
+import {Injectable, output, Output} from '@angular/core';
 import {AgentProjectModel} from './agent-project-model';
 import {AiAgentModel} from './ai-agent-model';
 import {LlmModel} from './llm-model';
 import {MemoryModel} from './memory-model';
 import {ToolsModel} from './tools-model';
+import EventEmitter = require('node:events');
 
 @Injectable({
   providedIn: 'root',
 })
 export class AgentProjectService {
+
+
   db:Map<string, AgentProjectModel>=new Map<string, AgentProjectModel>();
   error:boolean=false;
   msg:string='';
@@ -25,6 +28,7 @@ export class AgentProjectService {
 
       if(projectInDb == undefined){
           this.db.set(project.chatId, project);
+
       }else{
           this.error=true;
           this.msg = 'Proyecto ya existe en base de datos';

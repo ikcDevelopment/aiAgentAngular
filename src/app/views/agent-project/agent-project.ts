@@ -1,4 +1,4 @@
-import {Component, Input, SimpleChanges} from '@angular/core';
+import {Component, Input, output, SimpleChanges} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MemoryModel} from '../../services/memory/agent-project/memory-model';
 import {AgentProjectModel} from '../../services/memory/agent-project/agent-project-model';
@@ -12,7 +12,8 @@ import {AgentProjectService} from '../../services/memory/agent-project/agent-pro
     styleUrl: './agent-project.css',
 })
 export class AgentProject {
-    @Input() chatId:string='';
+
+    chatId:string='';
     componentTitle: string = 'Agent Project';
     msg:string = '';
 
@@ -41,25 +42,13 @@ export class AgentProject {
     ) {
     }
 
-    /**
-     * These properties are sent from any component that needs setting users
-     *
-     * first gets into ngOnChanges and then on ngOnInit
-     * @param changes
-     */
-    ngOnChanges(changes: SimpleChanges): void {
-        let propsRead: number = 0;
-
-        for (const propName in changes) {
-            this.form.controls.chatId.setValue(this.chatId);
-        }
-    }
 
     submit(){
         if(this.form.dirty){
             if (this.form.status == 'VALID') {
                 this.projectInMemorDb.updateProject(this.createAgentProjectModel());
                 this.msg = this.projectInMemorDb.msg;
+
             }
         }
     }
@@ -85,6 +74,8 @@ export class AgentProject {
             chatId: this.form.controls.chatId.value!
 
         };
+
+        this.chatId=body.chatId;
 
         return body;
     }
